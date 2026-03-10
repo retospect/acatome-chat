@@ -9,13 +9,13 @@ Tool descriptions are self-documenting — check them for parameters and usage.
 paper(id='slug:li2024mof')             # default overview
 paper(id='slug:li2024mof/toc')         # table of contents
 paper(id='slug:li2024mof#38')          # chunk 38 full text
-paper(id='slug:li2024mof#38-42')       # chunks 38–42
-paper(id='slug:li2024mof#38-')         # chunks 38+, paginated
+paper(id='slug:li2024mof#38..42')      # chunks 38–42
+paper(id='slug:li2024mof#38..')         # chunks 38+, paginated
 paper(id='slug:li2024mof#38/summary')  # chunk 38 enrichment summary
 paper(id='slug:li2024mof/summary')     # paper-level summary
 paper(id='slug:li2024mof/abstract')    # abstract
 paper(id='doi:10.1038/s41586-023-06/meta')    # DOI lookup
-search(query='CO2 capture MOF', year='2020-') # 2020 and later
+search(query='CO2 capture MOF', year='2020..') # 2020 and later
 note(id='slug:li2024mof', content='Key finding: ...')
 ```
 Pagination: use `page=` parameter, not query strings.
