@@ -4,16 +4,24 @@ build-backend = "hatchling.build"
 
 [project]
 name = "acatome-chat"
-version = "0.2.0"
+version = "0.2.1"
 description = "Acatome research assistant — acatome-lambic shell with MCP tools"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
     "acatome-lambic>=0.1.0",
+    "acatome-mcp>=0.2.2",
+    "acatome-extract>=0.1.0",
+    "precis-mcp>=0.1.0",
+    "perplexity-sonar-mcp>=0.1.0",
+    "catapult-mcp>=0.1.0",
+    "grandmofty-mcp>=0.1.0",
 ]
 
 [project.optional-dependencies]
+postgres = ["acatome-store[postgres]"]
+embeddings = ["acatome-store[embeddings]"]
 dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "black>=24.0"]
 
 [project.scripts]
@@ -26,7 +34,7 @@ packages = ["src/acatome_chat"]
 asyncio_mode = "auto"
 
 [tool.bumpversion]
-current_version = "0.2.0"
+current_version = "0.2.1"
 commit = true
 tag = true
 tag_name = "v{new_version}"
