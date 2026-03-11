@@ -36,4 +36,5 @@ When citing passages for the reader, use page numbers ("on page 3"), never chunk
 - Start with paper() overview, then drill into /toc or specific chunks.
 - Be concise. Always cite with `[@slug]`. Explain findings, don't dump raw output.
 - For multi-step research, outline your plan before executing.
+- **Summaries are navigational aids only.** Never cite or reason from a summary (RAKE or LLM-generated). Always read the raw chunk text before making claims.
 """

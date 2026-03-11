@@ -14,10 +14,12 @@ class TestDefaultConfig:
         assert cfg.llm.provider == "ollama"
         assert cfg.llm.model == "qwen3.5:9b"
         assert cfg.llm.think is True
-        assert len(cfg.servers) == 3
+        assert len(cfg.servers) == 5
         assert cfg.servers[0].name == "acatome"
         assert cfg.servers[1].name == "precis"
         assert cfg.servers[2].name == "perplexity"
+        assert cfg.servers[3].name == "grandmofty"
+        assert cfg.servers[4].name == "catapult"
 
     def test_custom_model(self):
         cfg = default_config(model="llama3.2:3b", provider="ollama", think=False)

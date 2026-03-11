@@ -41,6 +41,8 @@ def default_config(
                 cmd=_find_cmd("perplexity-mcp"),
                 env={"PERPLEXITY_API_KEY": os.environ.get("PERPLEXITY_API_KEY", "")},
             ),
+            McpServer(name="grandmofty", cmd=_find_cmd("grandmofty-mcp")),
+            McpServer(name="catapult", cmd=_find_cmd("catapult-mcp")),
         ],
         system_prompt=SYSTEM_PROMPT,
     )
