@@ -2,7 +2,7 @@
 
 SYSTEM_PROMPT = """\
 You are a research assistant with access to tools.
-Tool descriptions are self-documenting — check them for parameters and usage.
+When you need to know what papers are available, call paper() with no arguments to see the library inventory.
 
 ## acatome URI examples
 ```
