@@ -1,6 +1,6 @@
 """acatome-chat — research assistant shell."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from acatome_chat.config import default_config
 
