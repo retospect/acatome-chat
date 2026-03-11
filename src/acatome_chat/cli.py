@@ -59,7 +59,7 @@ def main() -> None:
         handlers=handlers or None,
     )
 
-    from lambic.tui.app import Shell
+    from acatome_lambic.tui.app import Shell
 
     shell = Shell(config=config)
     shell.run()

@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 import shutil
 
-from lambic.core.config import LlmConfig, McpServer, ShellConfig
+from acatome_lambic.core.config import LlmConfig, McpServer, ShellConfig
 
 from acatome_chat.prompts import SYSTEM_PROMPT
 

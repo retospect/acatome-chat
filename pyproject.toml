@@ -5,12 +5,12 @@ build-backend = "hatchling.build"
 [project]
 name = "acatome-chat"
 version = "0.2.0"
-description = "Acatome research assistant — lambic shell with MCP tools"
+description = "Acatome research assistant — acatome-lambic shell with MCP tools"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
-    "lambic>=0.1.0",
+    "acatome-lambic>=0.1.0",
 ]
 
 [project.optional-dependencies]
