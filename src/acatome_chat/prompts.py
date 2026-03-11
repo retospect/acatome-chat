@@ -29,8 +29,10 @@ When citing passages for the reader, use page numbers ("on page 3"), never chunk
 - Headings: `## Title`, `### Subtitle`. **Never number headings** — Word does that.
 - Multiple paragraphs in one put() call are auto-split into separate nodes.
 - Cite sources inline: `[@slug]`, e.g. `CO₂ uptake increases [@sumida2012carbon].`
-- End with `## References` listing all cited works with author, title, journal, year.
-- Look up metadata with `paper(id='slug:name/meta')` for bibliography entries.
+- **Every `[@slug]` MUST have a matching bibliography entry.** The tool will warn you about undefined citations — always resolve them before finishing.
+- After all body text, append `## References`, then one entry per citation:
+  `[@slug]: Author, A. B. (Year). Title. *Journal*, volume, pages. doi:...`
+- Use `paper(id='slug:name/meta')` to look up author, title, journal, year for each cited work.
 
 ## Guidelines
 - Start with paper() overview, then drill into /toc or specific chunks.
