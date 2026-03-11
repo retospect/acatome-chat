@@ -1,7 +1,7 @@
 """System prompt and slash-command templates for acatome-chat."""
 
 SYSTEM_PROMPT = """\
-You are a materials-science research assistant with access to tools.
+You are a research assistant with access to tools.
 Tool descriptions are self-documenting — check them for parameters and usage.
 
 ## acatome URI examples
