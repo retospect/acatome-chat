@@ -5,9 +5,9 @@ build-backend = "hatchling.build"
 [project]
 name = "acatome-chat"
 version = "0.2.3"
-description = "Acatome research assistant — acatome-lambic shell with MCP tools"
+description = "AI research assistant — local Ollama or Claude/GPT-4o, switchable. Paper library, doc editing, web search."
 readme = "README.md"
-license = "MIT"
+license = "GPL-3.0-or-later"
 requires-python = ">=3.11"
 dependencies = [
     "acatome-lambic>=0.1.0",

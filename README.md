@@ -2,7 +2,7 @@
 
 **A local-first AI research assistant for scientific literature.**
 
-One install gives you an interactive shell backed by a local LLM, a searchable paper library, document editing, live web search, and domain-specific databases — all wired together through the Model Context Protocol (MCP).
+Runs with a **local Ollama model** by default — or switch to **Claude**, **GPT-4o**, or any litellm-compatible provider with a single flag. One install gives you an interactive shell with a searchable paper library, document editing, live web search, and domain-specific databases — all wired together through the Model Context Protocol (MCP).
 
 ## What you get
 
@@ -52,6 +52,9 @@ acatome-chat --no-think
 ```bash
 # Extract a single PDF
 acatome-extract extract paper.pdf
+
+# Extract all PDFs in a directory
+acatome-extract extract ~/Downloads/papers/
 
 # Watch a folder for new PDFs
 acatome-extract watch ~/Downloads/papers/
@@ -105,4 +108,4 @@ For local models via Ollama, no API keys are needed.
 
 ## License
 
-MIT
+GPL-3.0-or-later
