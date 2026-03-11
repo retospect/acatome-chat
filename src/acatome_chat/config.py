@@ -38,7 +38,7 @@ def default_config(
             McpServer(name="precis", cmd=_find_cmd("precis")),
             McpServer(
                 name="perplexity",
-                cmd=_find_cmd("perplexity-mcp"),
+                cmd=_find_cmd("perplexity-sonar-mcp"),
                 env={"PERPLEXITY_API_KEY": os.environ.get("PERPLEXITY_API_KEY", "")},
             ),
             McpServer(name="grandmofty", cmd=_find_cmd("grandmofty-mcp")),
