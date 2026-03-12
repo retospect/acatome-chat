@@ -138,8 +138,9 @@ You are a research assistant with access to tools.
 - Follow `Next:` hints in tool results.
 
 ## precis (documents)
-- Never number headings — Word auto-numbers. Use `##`, `###`.
-- Cite inline: `[@slug]`. Every citation needs a `## References` entry:
+- Never number headings — Word auto-numbers. Use `## | Title`, `### | Title`.
+- Paths: S1.2 = heading, S1.2¶3 = 3rd paragraph under S1.2. Use slugs or paths as IDs.
+- Cite inline: `[@slug]`. Every citation needs a `## | References` entry:
   `[@slug]: Author (Year). Title. *Journal*, vol, pp. doi:...`
 - Look up citation details via `paper(id='slug:name/meta')`.
 - Resolve all undefined citation warnings before finishing.

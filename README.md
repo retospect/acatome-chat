@@ -81,9 +81,23 @@ The shell has `/` commands with **tab autocomplete**:
 | `/status` | Show connected model and servers |
 | `/model <spec>` | Switch LLM provider on the fly |
 | `/think` / `/nothink` | Toggle reasoning mode |
+| `/db` | Show paper library connection info and stats |
+| `/review <prompt>` | Review the active document (see below) |
+| `/help` | Show command help |
 | `/quit` | Exit the shell |
 
-### 4. Talk to your papers
+### 4. Review documents
+
+```
+› /review check scientific rigor and paragraph structure
+› /review fix grammar and clarity --fix
+› /review verify citations --comments-only
+› /review improve transitions --section S2.3
+```
+
+The assistant reads each section, applies fixes as tracked changes, and adds margin comments for issues needing human judgment.
+
+### 5. Talk to your papers
 
 After ingesting papers, the LLM has direct access to your library. Example prompts:
 
