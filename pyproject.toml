@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "acatome-chat"
-version = "0.2.6"
+version = "0.2.7"
 description = "AI research assistant — local Ollama or Claude/GPT-4o, switchable. Paper library, doc editing, web search."
 readme = "README.md"
 license = "GPL-3.0-or-later"
@@ -34,7 +34,7 @@ packages = ["src/acatome_chat"]
 asyncio_mode = "auto"
 
 [tool.bumpversion]
-current_version = "0.2.6"
+current_version = "0.2.7"
 commit = true
 tag = true
 tag_name = "v{new_version}"

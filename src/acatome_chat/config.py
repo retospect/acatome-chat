@@ -7,7 +7,11 @@ import shutil
 
 from acatome_lambic.core.config import LlmConfig, McpServer, ShellConfig
 
-from acatome_chat.prompts import SYSTEM_PROMPT
+from acatome_chat.prompts import (
+    SYSTEM_PROMPT,
+    build_review_message,
+    build_review_reminder,
+)
 
 
 def _find_cmd(name: str) -> list[str]:
@@ -45,4 +49,6 @@ def default_config(
             McpServer(name="catapult", cmd=_find_cmd("catapult-mcp")),
         ],
         system_prompt=SYSTEM_PROMPT,
+        message_commands={"review": build_review_message},
+        task_reminder_commands={"review": build_review_reminder},
     )
