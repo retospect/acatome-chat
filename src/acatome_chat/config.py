@@ -25,6 +25,37 @@ def _find_cmd(name: str) -> list[str]:
     return ["uv", "run", name]
 
 
+def _db_status(_cmd: str) -> str:
+    """Return store connection info and row counts."""
+    try:
+        from acatome_store.store import Store
+
+        store = Store()
+        s = store.stats()
+        store.close()
+    except Exception as exc:
+        return f"Store unavailable: {exc}"
+
+    backend = s["metadata_backend"]
+    if backend == "postgres":
+        conn = f"{s['pg_user']}@{s['pg_host']}:{s['pg_port']}/{s['pg_database']}  schema={s['pg_schema']}"
+    else:
+        conn = s.get("db_path", "?")
+
+    return (
+        f"  metadata:  {backend}  {conn}\n"
+        f"  vector:    {s['vector_backend']}\n"
+        f"  embedding: {s['embed_model']}  dim={s['embed_dim']}\n"
+        f"  store:     {s['store_path']}\n"
+        f"\n"
+        f"  refs:      {s['total_refs']:,}\n"
+        f"  papers:    {s['total_papers']:,}\n"
+        f"  blocks:    {s['total_blocks']:,}\n"
+        f"  verified:  {s['verified']:,}\n"
+        f"  indexed:   {s['indexed_blocks']:,}"
+    )
+
+
 def default_config(
     model: str = "qwen3.5:9b",
     provider: str = "ollama",
@@ -51,4 +82,5 @@ def default_config(
         system_prompt=SYSTEM_PROMPT,
         message_commands={"review": build_review_message},
         task_reminder_commands={"review": build_review_reminder},
+        custom_commands={"db": _db_status},
     )
