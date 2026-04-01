@@ -9,6 +9,15 @@ description = "AI research assistant — local Ollama or Claude/GPT-4o, switchab
 readme = "README.md"
 license = "GPL-3.0-or-later"
 requires-python = ">=3.11"
+authors = [{ name = "Reto Stamm", email = "reto@retostamm.com" }]
+keywords = ["research", "llm", "mcp", "ollama", "claude"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
 dependencies = [
     "acatome-lambic>=0.1.0",
     "acatome-extract>=0.1.0",
@@ -19,32 +28,42 @@ dependencies = [
     "gripe-mcp>=0.1.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/retospect/acatome-chat"
+Repository = "https://github.com/retospect/acatome-chat"
+
 [project.optional-dependencies]
 postgres = ["acatome-store[postgres]"]
 embeddings = ["acatome-store[embeddings]"]
-dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "black>=24.0"]
 
 [project.scripts]
 acatome-chat = "acatome_chat.cli:main"
 
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.11",
+    "mypy>=1.15",
+    "pre-commit>=4",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/acatome_chat"]
 
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
+
 [tool.pytest.ini_options]
+testpaths = ["tests"]
 asyncio_mode = "auto"
-
-[tool.bumpversion]
-current_version = "0.4.0"
-commit = true
-tag = true
-tag_name = "v{new_version}"
-
-[[tool.bumpversion.files]]
-filename = "pyproject.toml"
-search = 'version = "{current_version}"'
-replace = 'version = "{new_version}"'
-
-[[tool.bumpversion.files]]
-filename = "src/acatome_chat/__init__.py"
-search = '__version__ = "{current_version}"'
-replace = '__version__ = "{new_version}"'

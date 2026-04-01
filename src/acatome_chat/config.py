@@ -77,6 +77,7 @@ def default_config(
             ),
             McpServer(name="mofty", cmd=_find_cmd("grandmofty-mcp")),
             McpServer(name="catapult", cmd=_find_cmd("catapult-mcp")),
+            McpServer(name="patentorney", cmd=_find_cmd("patentorney-mcp")),
             McpServer(
                 name="gripe",
                 cmd=_find_cmd("gripe"),

@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from acatome_chat.config import default_config
 from acatome_chat.prompts import (
     SYSTEM_PROMPT,
@@ -18,12 +16,9 @@ class TestDefaultConfig:
         assert cfg.llm.provider == "ollama"
         assert cfg.llm.model == "qwen3.5:9b"
         assert cfg.llm.think is True
-        assert len(cfg.servers) == 5
-        assert cfg.servers[0].name == "acatome"
-        assert cfg.servers[1].name == "precis"
-        assert cfg.servers[2].name == "perplexity"
-        assert cfg.servers[3].name == "grandmofty"
-        assert cfg.servers[4].name == "catapult"
+        assert len(cfg.servers) == 6
+        names = [s.name for s in cfg.servers]
+        assert names == ["precis", "perplexity", "mofty", "catapult", "patentorney", "gripe"]
 
     def test_custom_model(self):
         cfg = default_config(model="llama3.2:3b", provider="ollama", think=False)
@@ -46,12 +41,11 @@ class TestSystemPrompt:
     def test_mentions_tools(self):
         assert "search()" in SYSTEM_PROMPT
         assert "precis" in SYSTEM_PROMPT.lower()
-        assert "acatome" in SYSTEM_PROMPT.lower()
         assert "perplexity" in SYSTEM_PROMPT.lower()
         assert "[@slug]" in SYSTEM_PROMPT
 
-    def test_mentions_comment_mode(self):
-        assert "comment" in SYSTEM_PROMPT.lower()
+    def test_mentions_self_monitoring(self):
+        assert "report_issue" in SYSTEM_PROMPT
 
 
 class TestParseReviewCommand:
