@@ -69,15 +69,22 @@ def default_config(
             think=think,
         ),
         servers=[
-            McpServer(name="acatome", cmd=_find_cmd("acatome-mcp")),
             McpServer(name="precis", cmd=_find_cmd("precis")),
             McpServer(
                 name="perplexity",
                 cmd=_find_cmd("perplexity-sonar-mcp"),
                 env={"PERPLEXITY_API_KEY": os.environ.get("PERPLEXITY_API_KEY", "")},
             ),
-            McpServer(name="grandmofty", cmd=_find_cmd("grandmofty-mcp")),
+            McpServer(name="mofty", cmd=_find_cmd("grandmofty-mcp")),
             McpServer(name="catapult", cmd=_find_cmd("catapult-mcp")),
+            McpServer(
+                name="gripe",
+                cmd=_find_cmd("gripe"),
+                env={
+                    "GRIPE_AGENT_ID": "acatome-chat",
+                    "GRIPE_DB_URL": os.environ.get("GRIPE_DB_URL", ""),
+                },
+            ),
         ],
         system_prompt=SYSTEM_PROMPT,
         message_commands={"review": build_review_message},

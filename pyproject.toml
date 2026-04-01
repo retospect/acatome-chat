@@ -11,12 +11,12 @@ license = "GPL-3.0-or-later"
 requires-python = ">=3.11"
 dependencies = [
     "acatome-lambic>=0.1.0",
-    "acatome-mcp>=0.2.2",
     "acatome-extract>=0.1.0",
-    "precis-mcp>=0.1.0",
+    "precis-mcp[word,paper]>=2.0.0a1",
     "perplexity-sonar-mcp>=0.1.0",
     "catapult-mcp>=0.1.0",
     "grandmofty-mcp>=0.1.0",
+    "gripe-mcp>=0.1.0",
 ]
 
 [project.optional-dependencies]
