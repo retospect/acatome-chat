@@ -18,7 +18,10 @@ class TestDefaultConfig:
         assert cfg.llm.think is True
         assert len(cfg.servers) == 6
         names = [s.name for s in cfg.servers]
-        assert names == ["precis", "perplexity", "mofty", "catapult", "patentorney", "gripe"]
+        assert names == [
+            "precis", "perplexity", "mofty",
+            "catapult", "patentorney", "gripe",
+        ]
 
     def test_custom_model(self):
         cfg = default_config(model="llama3.2:3b", provider="ollama", think=False)

@@ -64,8 +64,10 @@ def build_review_message(raw: str) -> str:
         )
     else:  # hybrid
         action = (
-            "High confidence (grammar, clarity, style) → fix in place as tracked change.\n"
-            "Low confidence (missing citations, factual doubt, restructuring) → margin comment.\n"
+            "High confidence (grammar, clarity, style) →"
+            " fix in place as tracked change.\n"
+            "Low confidence (missing citations, factual doubt,"
+            " restructuring) → margin comment.\n"
             "Fix: put(id='SLUG', text='corrected text', mode='replace')\n"
             "Comment: put(id='SLUG', text='SEVERITY: description.', mode='comment')"
         )
@@ -74,7 +76,10 @@ def build_review_message(raw: str) -> str:
     if section:
         scope = f"Scope: section {section} only. Call get(id='{section}') to read it."
     else:
-        scope = "Scope: entire document. Call toc() first, then get(id='SLUG') for each section."
+        scope = (
+            "Scope: entire document. Call toc() first,"
+            " then get(id='SLUG') for each section."
+        )
 
     return f"""\
 ## Review Task

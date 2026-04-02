@@ -38,7 +38,10 @@ def _db_status(_cmd: str) -> str:
 
     backend = s["metadata_backend"]
     if backend == "postgres":
-        conn = f"{s['pg_user']}@{s['pg_host']}:{s['pg_port']}/{s['pg_database']}  schema={s['pg_schema']}"
+        conn = (
+            f"{s['pg_user']}@{s['pg_host']}:{s['pg_port']}"
+            f"/{s['pg_database']}  schema={s['pg_schema']}"
+        )
     else:
         conn = s.get("db_path", "?")
 
