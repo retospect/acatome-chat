@@ -19,8 +19,12 @@ class TestDefaultConfig:
         assert len(cfg.servers) == 6
         names = [s.name for s in cfg.servers]
         assert names == [
-            "precis", "perplexity", "mofty",
-            "catapult", "patentorney", "gripe",
+            "precis",
+            "perplexity",
+            "mofty",
+            "catapult",
+            "patentorney",
+            "gripe",
         ]
 
     def test_custom_model(self):
