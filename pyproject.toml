@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "acatome-chat"
-version = "0.4.0"
+version = "0.4.1"
 description = "AI research assistant — local Ollama or Claude/GPT-4o, switchable. Paper library, doc editing, web search."
 readme = "README.md"
 license = "GPL-3.0-or-later"
